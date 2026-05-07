@@ -1,0 +1,15 @@
+[Map-1]
+1] 16 x 16 Tilemap
+2] 320px x 320px Dimensions
+3] No of tiles in one row : 20
+4] No of tiles in one column : 20
+5] Image size: 14.6kb
+5] Source : https://edermunizz.itch.io/free-pixel-art-overworld-tileset
+
+[Map-2]
+1] 16 x 16 px 
+2] 640px x 640px Image Dimensions
+3] No of tiles in one row: 40
+4] No of tiles in one column: 40
+5] Image size: 144kb
+6] source URL: https://ventilatore.itch.io/the-fantasy-tileset

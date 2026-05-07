@@ -1,0 +1,15 @@
+# Build output
+Build/
+
+# Visual Studio cache and user files
+.vs/
+*.user
+*.suo
+
+# Compiled files
+*.obj
+*.pdb
+*.exe
+*.dll
+*.lib
+*.exp
