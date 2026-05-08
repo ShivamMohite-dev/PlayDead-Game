@@ -13,3 +13,9 @@
 4] No of tiles in one column: 40
 5] Image size: 144kb
 6] source URL: https://ventilatore.itch.io/the-fantasy-tileset
+
+
+[Homepage-Texture]
+1] 836px x 836px Image Dimensions
+2] Image Size: 398kb
+3] Source URL: https://in.pinterest.com/pin/114701121757063207/
