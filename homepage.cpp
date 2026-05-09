@@ -142,7 +142,7 @@ void homepage::Update(sf::RenderWindow& window, sf::Event& event, gamestate& cur
             {
                 std::cout << "PLAY BUTTON CLICKED!" << std::endl;
                 backgroundMusic.stop();
-                currentState = gamestate::Playing;
+                currentState = gamestate::CharacterSelect;
             }
             if (ExitButton.getGlobalBounds().contains(mousePos))
             {

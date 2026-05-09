@@ -2,6 +2,7 @@
 #include <SFML/Audio.hpp>
 #include "GameState.h"
 #include "homepage.h"
+#include "CharacterSelect.h"
 #include <iostream>
 
 int main()
@@ -13,13 +14,16 @@ int main()
 
     homepage InitialHomepage;
     InitialHomepage.Initialize();
+
+    CharacterSelect character;
+    character.Initialize();
     //------------------------------------------INITIALIZE-----------------------------//
     
 
     //---------------------------------------------LOAD--------------------------------//
 
     InitialHomepage.Load(window);
-
+    character.Load();
     //---------------------------------------------LOAD--------------------------------//
     
     while (window.isOpen())
@@ -38,6 +42,10 @@ int main()
             {
                 case gamestate::Homepage:
                     InitialHomepage.Update(window, event, currentState);
+                    break;
+
+                case gamestate::CharacterSelect:
+                    character.Update(window, event, currentState);
                     break;
 
                 case gamestate::Playing:
@@ -65,8 +73,11 @@ int main()
                 InitialHomepage.Draw(window);
                 break;
 
+            case gamestate::CharacterSelect:
+                character.Draw(window);
+                break;
+
             case gamestate::Playing:
-                // game.Draw() will go here later
                 break;
 
             case gamestate::Paused:
