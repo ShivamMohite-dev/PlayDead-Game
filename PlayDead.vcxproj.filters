@@ -27,6 +27,18 @@
     <ClCompile Include="CharacterSelect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="playing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerLogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyLogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="homepage.h">
@@ -36,6 +48,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CharacterSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="playing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerLogic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyLogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

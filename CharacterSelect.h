@@ -1,10 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "gamestate.h"
-class CharacterSelect
-{
+class CharacterSelect{
 private:
-	std::string selectedcharacter;
+	std::string selectedcharacter, finalizedcharacter = "";
 	sf::Font GraduateFont;
 	sf::Texture backgroundTexture, robinTexture, frierenTexture, hinataTexture;
 	sf::Sprite background_sprite, robin, hinata, frieren;
@@ -13,6 +12,7 @@ private:
 public:
 	CharacterSelect();
 	~CharacterSelect();
+	std::string getcharacter() { return finalizedcharacter; }
 	void Initialize();
 	void Load();
 	void Update(sf::RenderWindow& window, sf::Event& event, gamestate& currentState);

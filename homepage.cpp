@@ -92,7 +92,7 @@ void homepage::Load(sf::RenderWindow& window)
     {
         std::cout << "Background music loaded successfully!" << std::endl;
         backgroundMusic.setLoop(true);
-        backgroundMusic.setVolume(40.f);
+        backgroundMusic.setVolume(20.f);
         backgroundMusic.play();
     }
     else

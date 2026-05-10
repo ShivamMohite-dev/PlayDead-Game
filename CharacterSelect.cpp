@@ -188,8 +188,7 @@ void CharacterSelect::Update(sf::RenderWindow& window, sf::Event& event, gamesta
 	sf::Vector2f mousePos(event.mouseButton.x, event.mouseButton.y);
 	if (event.type == sf::Event::MouseButtonPressed) {
 		if (event.mouseButton.button == sf::Mouse::Left) {
-			if (rect1.getGlobalBounds().contains(mousePos))
-			{
+			if (rect1.getGlobalBounds().contains(mousePos)){
 				std::cout << "Character Selected: Robin" << std::endl;
 				selectedcharacter = "Robin";
 				selectText.setFillColor(sf::Color(179, 92, 68));
@@ -200,8 +199,7 @@ void CharacterSelect::Update(sf::RenderWindow& window, sf::Event& event, gamesta
 				proceedText.setFillColor(sf::Color::Black);
 				proceedbutton.setOutlineColor(sf::Color::Black);
 			}
-			if (rect2.getGlobalBounds().contains(mousePos))
-			{
+			if (rect2.getGlobalBounds().contains(mousePos)){
 				std::cout << "Character Selected: Frieren" << std::endl;
 				selectedcharacter = "Frieren";
 				selectText.setFillColor(sf::Color(179, 92, 68));
@@ -212,8 +210,7 @@ void CharacterSelect::Update(sf::RenderWindow& window, sf::Event& event, gamesta
 				proceedText.setFillColor(sf::Color::Black);
 				proceedbutton.setOutlineColor(sf::Color::Black);
 			}
-			if (rect3.getGlobalBounds().contains(mousePos))
-			{
+			if (rect3.getGlobalBounds().contains(mousePos)){
 				std::cout << "Character Selected: Hinata" << std::endl;
 				selectedcharacter = "Hinata";
 				selectText.setFillColor(sf::Color(179, 92, 68));
@@ -227,6 +224,7 @@ void CharacterSelect::Update(sf::RenderWindow& window, sf::Event& event, gamesta
 			if (proceedbutton.getGlobalBounds().contains(mousePos) && !selectedcharacter.empty())
 			{
 				std::cout << "Proceed Button pressed!" << std::endl;
+				finalizedcharacter = selectedcharacter;
 				currentState = gamestate::Playing;
 			}
 		}
