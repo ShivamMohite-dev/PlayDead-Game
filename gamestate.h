@@ -1,6 +1,5 @@
 #pragma once
-enum class gamestate
-{
+enum class gamestate{
 	Homepage,
 	CharacterSelect,
 	Playing,

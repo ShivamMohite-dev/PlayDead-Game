@@ -73,7 +73,7 @@ int main()
                 playwindow.Load(player, enemy, ingamefps, character.getcharacter());
                 playingLoaded = true;
             }
-            playwindow.Update(player, enemy, ingamefps, deltatime);
+            playwindow.Update(player, enemy, ingamefps, deltatime, window);
             break;
         default: break;
         }
@@ -97,3 +97,4 @@ int main()
     }
     return 0;
 }
+

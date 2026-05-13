@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-class fps
-{
+class fps{
 private:
 	sf::Font fpsfont;
 	sf::Text fpstext;

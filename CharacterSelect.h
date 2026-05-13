@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "gamestate.h"
 class CharacterSelect{
 private:
@@ -9,6 +10,7 @@ private:
 	sf::Sprite background_sprite, robin, hinata, frieren;
 	sf::Text pickText, RobinNameText, FrierenNameText, HinataNameText, charname, selectText, abilityinfo, proceedText;
 	sf::RectangleShape rect1, rect2, rect3, proceedbutton;
+	sf::Music clicksound, hoversound;
 public:
 	CharacterSelect();
 	~CharacterSelect();

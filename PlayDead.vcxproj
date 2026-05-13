@@ -161,8 +161,10 @@
     <ClCompile Include="gamestate.cpp" />
     <ClCompile Include="homepage.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MathLogic.cpp" />
     <ClCompile Include="PlayerLogic.cpp" />
     <ClCompile Include="playing.cpp" />
+    <ClCompile Include="Projectile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CharacterSelect.h" />
@@ -170,8 +172,10 @@
     <ClInclude Include="fps.h" />
     <ClInclude Include="gamestate.h" />
     <ClInclude Include="homepage.h" />
+    <ClInclude Include="MathLogic.h" />
     <ClInclude Include="PlayerLogic.h" />
     <ClInclude Include="playing.h" />
+    <ClInclude Include="Projectile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

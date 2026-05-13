@@ -2,20 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "gamestate.h"
-class homepage
-{
+class homepage{
 private:
-    sf::Texture CommonTexture;
-    sf::Font PlayfairFont;
-    sf::Font AwesomeFont;
-    sf::Sprite HomepageSprite;
-    sf::Text TitleText;
-    sf::Text GamenameText1, GamenameText2;
+    sf::Text TitleText, GamenameText1, GamenameText2, PlayButtonText, ExitButtonText;
+    sf::Texture CommonTexture, PlayerTexture;
+    sf::Sprite HomepageSprite, PlayerSprite1;
+    sf::Font PlayfairFont, AwesomeFont;
     sf::RectangleShape PlayButton, ExitButton;
-    sf::Text PlayButtonText, ExitButtonText;
     sf::Music backgroundMusic;
-    sf::Texture PlayerTexture;
-    sf::Sprite PlayerSprite1;
 public:
 	homepage();
 	~homepage();

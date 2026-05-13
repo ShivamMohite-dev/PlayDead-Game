@@ -1,0 +1,18 @@
+Spritesheet name: Fireball_Spritesheet.png
+Spritesheet size: 243kb
+Spritesheet Dimensions: 1000 X 1200
+Each Tile Dimensions: 200 X 200
+Source: https://weisinx7.itch.io/fireball-explosion-sprites
+
+
+Spritesheet name: PurpleFlame_Spritesheet.png
+Spritesheet size: 82kb
+Spritesheet Dimensions: 256 X 340
+Each Tile Dimensions: 64 X 34
+Source: https://www.magnific.com/premium-vector/blue-fire-animation-spite-sheet-2d-fx_422334124.htm#fromView=keyword&page=2&position=35&uuid=9d22c6b4-ceb1-406f-b772-c4a4a118a5ff&query=Magic+effect+sprite+sheet
+
+Spritesheet name: Rasenshuriken_Spritesheet.png
+Spirtesheet size: 216kb
+Spritesheet Dimensions: 1208 X 785
+Each tile dimensions: 257 X 157
+Source: https://www.deviantart.com/duannian/art/nzc-effect-Rasen-Shuriken-of-Can-be-thrown-out-1005851943
