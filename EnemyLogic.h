@@ -1,6 +1,8 @@
 #pragma once
 #include<SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "MathLogic.h"
+#include "GameStats.h"
 class EnemyLogic{
 private:
 	sf::Texture enemy;
@@ -13,6 +15,10 @@ private:
 	sf::Vector2f moveDirection1, moveDirection2, moveDirection3;
 	float directionTimer1, directionTimer2, directionTimer3;
 	float directionChangeInterval;
+	sf::Music enemydeadbg;
+	bool enemy1DeadPlayed;
+	bool enemy2DeadPlayed;
+	bool enemy3DeadPlayed;
 public:
 	EnemyLogic();
 	~EnemyLogic();
@@ -22,9 +28,11 @@ public:
 	int getEnemy1Health() { return health1; }
 	int getEnemy2Health() { return health2; }
 	int getEnemy3Health() { return health3; }
+	bool allEnemiesDead() { return health1 <= 0 && health2 <= 0 && health3 <= 0; }
 	void changeHealth(int enemyIndex, int hp);
 	void Initialize();
 	void Load();
-	void Update(float deltatime, sf::Vector2f playerPos);
+	void Update(float deltatime, sf::Vector2f playerPos, GameStats& stats);
 	void Draw(sf::RenderWindow& window);
+	void Reset(int currentLevel);
 };

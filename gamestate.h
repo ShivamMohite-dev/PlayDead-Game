@@ -4,5 +4,6 @@ enum class gamestate{
 	CharacterSelect,
 	Playing,
 	Paused,
-	GameOver
+	LevelComplete,  // ← new
+	GameOver,       // ← new
 };

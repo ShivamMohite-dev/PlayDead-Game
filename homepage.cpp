@@ -73,15 +73,6 @@ void homepage::Load(sf::RenderWindow& window){
     else {
         std::cout << "Player 1 Sprite failed to load!" << std::endl;
     }
-    if (backgroundMusic.openFromFile("Assets/Audio/Homepage-BackgroundMusic.mp3")){
-        std::cout << "Background music loaded successfully!" << std::endl;
-        backgroundMusic.setLoop(true);
-        backgroundMusic.setVolume(20.f);
-        // backgroundMusic.play(); // UNCOMMENT THIS FOR BACKGROUND MUSIC
-    }
-    else{
-        std::cout << "Background music loading failed!" << std::endl;
-    }
 }
 void homepage::Update(sf::RenderWindow& window, sf::Event& event, gamestate& currentState){
     sf::Vector2i mousePosition = sf::Mouse::getPosition(window);

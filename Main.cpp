@@ -7,6 +7,10 @@
 #include "PlayerLogic.h"
 #include "fps.h"
 #include "EnemyLogic.h"
+#include "LevelComplete.h"
+#include "gamestate.h"
+#include "GameStats.h"
+#include "GameOver.h"
 #include <iostream>
 int main()
 {
@@ -33,6 +37,16 @@ int main()
 
     EnemyLogic enemy;
     enemy.Initialize();
+
+    GameStats stats;
+
+    int currentLevel = 1;
+    LevelComplete levelcomplete;
+    levelcomplete.Load(stats);
+
+
+    GameOver gameover;
+    gameover.Load();
     //------------------------------------------INITIALIZE-----------------------------//
 
     //---------------------------------------------LOAD--------------------------------//
@@ -60,6 +74,10 @@ int main()
             case gamestate::CharacterSelect:
                 character.Update(window, event, currentState);
                 break;
+
+            case gamestate::GameOver:
+                gameover.Update(window, event, currentState, playingLoaded);
+                break;
             default: break;
             }
         }
@@ -70,11 +88,18 @@ int main()
         case gamestate::Playing:
             if (!playingLoaded)
             {
-                playwindow.Load(player, enemy, ingamefps, character.getcharacter());
+                playwindow.Load(player, enemy, ingamefps, character.getcharacter(), currentLevel, stats);
                 playingLoaded = true;
             }
-            playwindow.Update(player, enemy, ingamefps, deltatime, window);
+            playwindow.Update(player, enemy, ingamefps, deltatime, window, currentState, stats);
             break;
+
+        case gamestate::LevelComplete:
+            levelcomplete.Update(window, event, currentState, currentLevel, stats);
+            if (currentState == gamestate::Playing) // ← state just changed to Playing
+                playingLoaded = false; // ← reset so Load() gets called again
+            break;
+
         default: break;
         }
 
@@ -89,7 +114,13 @@ int main()
             character.Draw(window);
             break;
         case gamestate::Playing:
-            playwindow.Draw(window,enemy, ingamefps, player);
+            playwindow.Draw(window,enemy, ingamefps, player, currentState);
+            break;
+        case gamestate::LevelComplete:
+            levelcomplete.Draw(window);
+            break;
+        case gamestate::GameOver:
+            gameover.Draw(window);
             break;
         default: break;
         }

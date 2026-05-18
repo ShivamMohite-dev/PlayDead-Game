@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "CharacterSelect.h"
 #include "EnemyLogic.h"
+#include "GameStats.h"
 #include <vector>
 class PlayerLogic{
 private:
@@ -17,6 +18,7 @@ private:
     sf::Font font;
     bool playerAlive;
 public:
+    void clearProjectiles() { projectiles.clear(); }
     PlayerLogic();
     ~PlayerLogic();
     std::string getcharacter() { return mycharacter; }
@@ -24,6 +26,6 @@ public:
     sf::Vector2f getCharacterSpritePosition() { return characterSprite.getPosition(); }
     void Initialize();
     void Load(std::string mycharacter);
-    void Update(float deltatime, sf::RenderWindow& window, EnemyLogic& enemy);
-    void Draw(sf::RenderWindow& window);
+    void Update(float deltatime, sf::RenderWindow& window, EnemyLogic& enemy, GameStats& stats);
+    void Draw(sf::RenderWindow& window, gamestate& currentState);
 };

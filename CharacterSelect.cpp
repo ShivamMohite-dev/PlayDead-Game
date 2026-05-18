@@ -6,10 +6,10 @@ void CharacterSelect::Initialize(){}
 void CharacterSelect::Load(){
 	std::cout << "CharacterSelect::Load() function called!" << std::endl; // Delete this line of code once everything is working perfectly
 	if (backgroundTexture.loadFromFile("Assets/World/CharacterSelect-Texture.png")) {
-		std::cout << "Character: Robin Loaded Successfully" << std::endl;
+		std::cout << "Background Texture Loaded Successfully" << std::endl;
 		background_sprite.setTexture(backgroundTexture);
 	}else {
-		std::cout << "Failed to Load Character: Robin" << std::endl; // Delete this line of code once everything is working perfectly
+		std::cout << "Failed to Background Texture" << std::endl; // Delete this line of code once everything is working perfectly
 	}
 	if (robinTexture.loadFromFile("Assets/Player/Robin.png")) {
 		std::cout << "Character: Robin Loaded Successfully" << std::endl; // Delete this line of code once everything is working perfectly

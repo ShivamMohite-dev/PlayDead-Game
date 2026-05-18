@@ -1,27 +1,58 @@
 #include "EnemyLogic.h"
 #include <iostream>
-EnemyLogic::EnemyLogic() :enemyspeed(0.02f), health1(100), health2(100), health3(100), directionTimer1(0), directionTimer2(0), directionTimer3(0), directionChangeInterval(2000.f) {}
+EnemyLogic::EnemyLogic() :enemyspeed(0.02f), health1(100), health2(100), health3(100), directionTimer1(0), directionTimer2(0), directionTimer3(0), directionChangeInterval(2000.f), enemy1DeadPlayed(false), enemy2DeadPlayed(false), enemy3DeadPlayed(false) {}
 EnemyLogic::~EnemyLogic(){}
 void EnemyLogic::changeHealth(int index, int hp)
 {
     if (index == 1)
     {
         health1 += hp;
+
+        if (health1 <= 0 && !enemy1DeadPlayed)
+        {
+            health1 = 0;
+            enemydeadbg.play();
+            enemy1DeadPlayed = true;
+        }
+
         enemyHealth1.setString(std::to_string(health1));
     }
+
     if (index == 2)
     {
         health2 += hp;
+
+        if (health2 <= 0 && !enemy2DeadPlayed)
+        {
+            health2 = 0;
+            enemydeadbg.play();
+            enemy2DeadPlayed = true;
+        }
+
         enemyHealth2.setString(std::to_string(health2));
     }
+
     if (index == 3)
     {
         health3 += hp;
+
+        if (health3 <= 0 && !enemy3DeadPlayed)
+        {
+            health3 = 0;
+            enemydeadbg.play();
+            enemy3DeadPlayed = true;
+        }
+
         enemyHealth3.setString(std::to_string(health3));
     }
 }
 void EnemyLogic::Initialize(){}
 void EnemyLogic::Load() {
+    if (!enemydeadbg.openFromFile("Assets/Audio/enemydeath.mp3")) {
+        std::cout << "Unable to load enemy death audio" << std::endl;
+    }
+    enemydeadbg.setLoop(false);
+    enemydeadbg.setVolume(30.f);
     if (enemy.loadFromFile("Assets/Enemies/skeleton.png")) {
         enemySprite1.setTexture(enemy); // Enemy-Sprite 1
         enemySprite1.setScale(0.2f, 0.2f);
@@ -63,7 +94,7 @@ void EnemyLogic::Load() {
         enemyHealth3.setPosition(enemySprite3.getPosition());
     }
 }
-void EnemyLogic::Update(float deltatime, sf::Vector2f playerPos)
+void EnemyLogic::Update(float deltatime, sf::Vector2f playerPos, GameStats& stats)
 {
     // Enemy 1
     if (health1 > 0)
@@ -135,9 +166,37 @@ void EnemyLogic::Draw(sf::RenderWindow& window){
         window.draw(boundingbox3);
         window.draw(enemyHealth3);
     }
-    if (health3 == 0 && health2 == 0 && health1 == 0)
+}
+void EnemyLogic::Reset(int level)
+{
+    health1 = 100;
+    health2 = 100;
+    health3 = 100;
+    enemySprite1.setPosition(600, 300);
+    enemySprite2.setPosition(600, 50);
+    enemySprite3.setPosition(600, 600);
+    moveDirection1 = sf::Vector2f(0, 0);
+    moveDirection2 = sf::Vector2f(0, 0);
+    moveDirection3 = sf::Vector2f(0, 0);
+    directionTimer1 = 0;
+    directionTimer2 = 0;
+    directionTimer3 = 0;
+    enemy1DeadPlayed = false;
+    enemy2DeadPlayed = false;
+    enemy3DeadPlayed = false;
+    if (level == 1)
     {
-        std::cout << "Enemies have been slained.....VICTORY" << std::endl;
-        window.close();
+        enemyspeed = 0.02f;
+        directionChangeInterval = 2000.f;
+    }
+    else if (level == 2)
+    {
+        enemyspeed = 0.04f;        // faster
+        directionChangeInterval = 1500.f;  // changes direction more often
+    }
+    else if (level == 3)
+    {
+        enemyspeed = 0.07f;        // even faster
+        directionChangeInterval = 1000.f;  // very aggressive
     }
 }
